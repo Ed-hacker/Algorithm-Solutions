@@ -13,10 +13,10 @@ class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         
 
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
+        long N = Long.parseLong(st.nextToken());
+        long M = Long.parseLong(st.nextToken());
         
-        int result = (N+M)*(N-M);
+        long result = (N+M)*(N-M);
 
         System.out.print(result);
     }
