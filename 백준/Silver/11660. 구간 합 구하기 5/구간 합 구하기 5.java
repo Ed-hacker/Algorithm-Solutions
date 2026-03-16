@@ -8,11 +8,7 @@ class Main {
     static int[][] arr;
 
     static int calculate(int x1,int y1, int x2, int y2){
-        int sum = 0;
-        for(int i = x1; i <= x2; i++){
-            sum += arr[i][y2] - arr[i][y1-1];
-        }
-        return sum;
+        return arr[x2][y2] - arr[x1-1][y2] - arr[x2][y1-1] + arr[x1-1][y1-1];
     }
 
     public static void main(String[] args) throws IOException {
@@ -26,7 +22,7 @@ class Main {
             StringTokenizer st3 = new StringTokenizer(br.readLine());
             for(int j = 1; j < N+1; j++){
                 arr[i][j] = Integer.parseInt(st3.nextToken());
-                arr[i][j] = arr[i][j] + arr[i][j-1]; //누적합만 저장해도 될듯?
+                arr[i][j] = arr[i][j] + arr[i][j-1] + arr[i-1][j] - arr[i-1][j-1]; //누적합만 저장(사각형 기준)
             }
         }
         StringBuilder sb = new StringBuilder();
