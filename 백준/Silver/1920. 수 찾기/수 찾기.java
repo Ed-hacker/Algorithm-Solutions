@@ -30,18 +30,21 @@ class Main {
         int N = Integer.parseInt(br.readLine());
         arr = new long[N];
         StringTokenizer st = new StringTokenizer(br.readLine());
-        
+
         for(int i = 0; i < N; i++){
             arr[i] = Long.parseLong(st.nextToken());
         }
-        
+
         Arrays.sort(arr); // 이분탐색 하기위해 정렬
 
         int M = Integer.parseInt(br.readLine());
         st = new StringTokenizer(br.readLine());
+        StringBuilder sb = new StringBuilder();
         for(int i = 0; i < M; i++){
-            if(check(Long.parseLong(st.nextToken()))) System.out.println(1);
-            else System.out.println(0);
+            if(check(Long.parseLong(st.nextToken()))) sb.append(1).append("\n");
+            else sb.append(0).append("\n");
         }
+
+        System.out.println(sb);
     }
 }
