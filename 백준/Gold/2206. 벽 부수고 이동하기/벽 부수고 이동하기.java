@@ -20,7 +20,7 @@ class Main {
     }
 
     private static void bfs() {
-        Queue<Point> que = new LinkedList<>();
+        Queue<Point> que = new ArrayDeque<>();
         visited[0][0][0] = true;
         board[0][0][1] = 1; //벽 안 뿌슨거 늘려주기   0은 벽 유무 확인용(원래 map)
 
