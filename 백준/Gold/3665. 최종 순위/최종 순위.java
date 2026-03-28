@@ -53,7 +53,7 @@ class Main {
             } //각 방 초기화
 
 
-            // 1. 작년 순위를 배열에 저장해서 "누가 원래 더 잘했는지" 기록해둡니다.
+            // 1. 작년 순위를 배열에 저장해서 누가 원래 더 잘했는지 기록
             int[] rank = new int[N + 1];
             StringTokenizer st = new StringTokenizer(br.readLine());
             for (int i = 0; i < N; i++) {
@@ -61,15 +61,13 @@ class Main {
                 indegree[team] = i;
                 rank[team] = i; // ★ 핵심: 이 팀의 원래 등수(0등~N-1등)를 기억해둠!
             }
-
-// 2. 순위가 바뀐 팀 입력받기
+            // 2. 순위가 바뀐 팀 입력받기
             int M = Integer.parseInt(br.readLine());
             for (int i = 0; i < M; i++) {
                 st = new StringTokenizer(br.readLine());
                 int a = Integer.parseInt(st.nextToken());
                 int b = Integer.parseInt(st.nextToken());
 
-                // ★ 진짜 범인 검거 완료! 누가 원래 잘했는지 비교해서 조절합니다.
                 if (rank[a] < rank[b]) { // 원래 a가 순위가 높았다면 (a가 이기고 있었다면)
                     // 이제 b가 이기므로, a는 지는 횟수 추가, b는 지는 횟수 감소
                     indegree[a]++;
