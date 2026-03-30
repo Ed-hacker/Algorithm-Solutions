@@ -84,18 +84,23 @@ class Main {
             int[] dist1 = dist;
             int oneToa = dist1[a];
             int oneTob = dist1[b];
-           
+
+            bfs(a);
+            int[] dist2 = dist;
+            
+            bfs(b);
+            int[] dist3 = dist;
+
 
             for(int i = 0; i < t; i++){
                 int end = Integer.parseInt(br.readLine());
                 int oneToN = dist1[end];
-
-                bfs(a);
-                int aToN = dist[end];
-                int aTob = dist[b];
+                
+                int aToN = dist2[end];
+                int aTob = dist2[b];
 
                 bfs(b);
-                int bToN = dist[end];
+                int bToN = dist3[end];
 
                 if(oneToN == oneToa + bToN + aTob || oneToN == oneTob + aToN + aTob){
                     result.add(end);
