@@ -69,11 +69,13 @@ class Main {
 
 
         bfs(K);
-
+        StringBuilder sb = new StringBuilder();
         for(int i = 1; i < dist.length; i++){
-            if(dist[i] == Integer.MAX_VALUE) System.out.println("INF");
-            else System.out.println(dist[i]);
+            if(dist[i] == Integer.MAX_VALUE) sb.append("INF").append("\n");
+            else sb.append(dist[i]).append("\n");
         }
+
+        System.out.println(sb);
 
 
     }
