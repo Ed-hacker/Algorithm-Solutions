@@ -87,7 +87,7 @@ class Main {
 
             bfs(a);
             int[] dist2 = dist;
-            
+
             bfs(b);
             int[] dist3 = dist;
 
@@ -95,26 +95,19 @@ class Main {
             for(int i = 0; i < t; i++){
                 int end = Integer.parseInt(br.readLine());
                 int oneToN = dist1[end];
-                
+
                 int aToN = dist2[end];
                 int aTob = dist2[b];
-
-                bfs(b);
+                
                 int bToN = dist3[end];
 
                 if(oneToN == oneToa + bToN + aTob || oneToN == oneTob + aToN + aTob){
                     result.add(end);
                 }
             }
-
-
             while(!result.isEmpty()){
                 sb.append(result.poll()).append(" ");
             }
-
-
-
-
             sb.append("\n");
         }
         System.out.println(sb);
