@@ -81,13 +81,14 @@ class Main {
 
 
             bfs(s);
-            int oneToa = dist[a];
-            int oneTob = dist[b];
+            int[] dist1 = dist;
+            int oneToa = dist1[a];
+            int oneTob = dist1[b];
+           
 
             for(int i = 0; i < t; i++){
                 int end = Integer.parseInt(br.readLine());
-                bfs(s);
-                int oneToN = dist[end];
+                int oneToN = dist1[end];
 
                 bfs(a);
                 int aToN = dist[end];
